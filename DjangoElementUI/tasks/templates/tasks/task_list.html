@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+<h3>所有活动列表</h3>
+{% for task in tasks %}
+    <p>{{ forloop.counter }}. {{ task.name }} - {{ task.get_status_display }}
+        (<a href="{% url 'tasks:task_update' task.id %}">更新</a> |
+        <a href="{% url 'tasks:task_delete' task.id %}">删除</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'tasks:task_create' %}"> 添加一个新活动</a></p>
+</body>
+</html>

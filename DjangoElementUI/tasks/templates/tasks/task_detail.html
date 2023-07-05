@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Detail</title>
+</head>
+<body>
+<p> 活动名称: {{ task.name }} | <a href="{% url 'tasks:task_update' task.id %}">更新</a> |
+    <a href="{% url 'tasks:task_delete' task.id %}">删除</a>
+</p>
+<p> Task Status: {{ task.get_status_display }} </p>
+<p> <a href="{% url 'tasks:task_list' %}">查看所有活动</a> |
+    <a href="{% url 'tasks:task_create'%}">建立新活动</a>
+</p>
+</body>
+</html>
